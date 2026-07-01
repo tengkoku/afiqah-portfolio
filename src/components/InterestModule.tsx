@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Compass, Leaf, Droplet, Sun, Eye, Navigation, Trees, Flame, MapPin } from 'lucide-react';
 import { hikingTrailData, initialVirtualPlants } from '../data/portfolioData';
 import { TrailPoint, VirtualPlant } from '../types';
@@ -6,6 +6,7 @@ import { TrailPoint, VirtualPlant } from '../types';
 export default function InterestModule() {
   const [selectedTrail, setSelectedTrail] = useState<TrailPoint>(hikingTrailData[0]);
   const [plants, setPlants] = useState<VirtualPlant[]>(initialVirtualPlants);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const handleWaterPlant = (id: string) => {
     setPlants(prev => prev.map(p => {
@@ -50,26 +51,30 @@ export default function InterestModule() {
   };
 
   return (
-    <section id="hobbies" className="py-20 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-colors">
-      <div className="max-w-6xl mx-auto px-6">
-        
+    <section
+      ref={sectionRef}
+      id="hobbies"
+      className="relative py-20"
+    >
+      <div className="relative max-w-6xl mx-auto px-6 z-10">
+
         {/* Section Header */}
         <div className="mb-12 max-w-2xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-4">
             <Compass className="w-3.5 h-3.5" />
-            Humanizing the Profile
+            Humanizing myself
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold font-display tracking-tight text-slate-900 dark:text-slate-100">
-            Hikes, Botany, & Mental Compilers
+            Seeing <span className="font-bold hover:text-emerald-700 dark:hover:text-emerald-500 shadow-emerald-500/10 dark:shadow-emerald-500/10">GREEN</span> <s className="font-bold hover:text-red-700 dark:hover:text-red-500 shadow-red-500/10 dark:shadow-red-500/10">RED</s>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 mt-3 text-sm sm:text-base leading-relaxed">
-            I don’t sit in front of screens 24/7. Stepping away from code lets me compile thoughts. Here is how my love for nature trails, redwood forestry growth networks, and indoor plant care mirrors my outlook on building software.
+            I don’t sit in front of screens 24/7. Stepping away from code lets me compile thoughts. Here is how my love for nature and indoor plant care mirrors my outlook on building software.
           </p>
         </div>
 
         {/* Dynamic Split Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
+
           {/* Left Column - HIKING TRAIL EXPLORER */}
           <div className="lg:col-span-7 bg-slate-50 dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
             <div className="space-y-6">
@@ -77,11 +82,11 @@ export default function InterestModule() {
                 <div className="flex items-center gap-2">
                   <Trees className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   <h3 className="font-bold font-display text-slate-900 dark:text-slate-100">
-                    The Forestry Architecture Log
+                    The Plant Log
                   </h3>
                 </div>
                 <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest font-mono">
-                  Bay Area Trails
+                  Malay Peninsula
                 </span>
               </div>
 
@@ -92,11 +97,10 @@ export default function InterestModule() {
                     key={trail.id}
                     id={`btn-${trail.id}`}
                     onClick={() => setSelectedTrail(trail)}
-                    className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
-                      selectedTrail.id === trail.id
-                        ? 'bg-emerald-500 text-white shadow-md'
-                        : 'text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-950'
-                    }`}
+                    className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${selectedTrail.id === trail.id
+                      ? 'bg-emerald-500 text-white shadow-md'
+                      : 'text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-950'
+                      }`}
                   >
                     {trail.name.split(' ')[0]}
                   </button>
@@ -106,11 +110,11 @@ export default function InterestModule() {
               {/* SVG Map / Trail Elevation Profile */}
               <div className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 min-h-[140px] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none"></div>
-                
+
                 {/* Visual trail path */}
                 <div className="w-full h-full flex flex-col justify-end">
                   <div className="relative h-20 w-full flex items-end">
-                    
+
                     {/* SVG Elevation curve */}
                     <svg className="w-full h-full overflow-visible" viewBox="0 0 100 20" preserveAspectRatio="none">
                       <defs>
@@ -120,21 +124,21 @@ export default function InterestModule() {
                         </linearGradient>
                       </defs>
                       {/* Spline curve dependent on selected trail */}
-                      {selectedTrail.id === 'trail-cathedral' && (
+                      {selectedTrail.id === 'trail-carnivorous' && (
                         <>
                           <path d="M 0 5 Q 25 18 50 12 T 100 2" fill="none" stroke="#10b981" strokeWidth="2" />
                           <path d="M 0 5 Q 25 18 50 12 T 100 2 L 100 20 L 0 20 Z" fill="url(#trailGrad)" />
                           <circle cx="50" cy="12" r="3.5" fill="#10b981" className="animate-pulse" />
                         </>
                       )}
-                      {selectedTrail.id === 'trail-pine' && (
+                      {selectedTrail.id === 'trail-berembun' && (
                         <>
                           <path d="M 0 18 Q 30 15 50 6 T 100 0.5" fill="none" stroke="#10b981" strokeWidth="2" />
                           <path d="M 0 18 Q 30 15 50 6 T 100 0.5 L 100 20 L 0 20 Z" fill="url(#trailGrad)" />
                           <circle cx="100" cy="0.5" r="3.5" fill="#10b981" className="animate-pulse" />
                         </>
                       )}
-                      {selectedTrail.id === 'trail-canyon' && (
+                      {selectedTrail.id === 'trail-mossy' && (
                         <>
                           <path d="M 0 14 Q 30 8 50 8 T 100 13" fill="none" stroke="#10b981" strokeWidth="2" />
                           <path d="M 0 14 Q 30 8 50 8 T 100 13 L 100 20 L 0 20 Z" fill="url(#trailGrad)" />
@@ -163,7 +167,7 @@ export default function InterestModule() {
                   </div>
                   <div className="hidden sm:block">
                     <span className="text-[10px] text-slate-400 block uppercase tracking-wider">Major Flora</span>
-                    <span className="text-sm font-bold font-sans text-slate-800 dark:text-slate-100">Conifer / Moss</span>
+                    <span className="text-sm font-bold font-sans text-slate-800 dark:text-slate-100">{selectedTrail.majorFlora}</span>
                   </div>
                 </div>
 
@@ -188,9 +192,9 @@ export default function InterestModule() {
                 </div>
               </div>
             </div>
-            
+
             <div className="text-[10px] text-slate-400 border-t border-slate-200 dark:border-slate-800 pt-3 mt-6">
-              * Trail logs mapped from actual weekend runs along Mount Tamalpais state watersheds.
+              * Trail logs mapped from your hikes along Malay Peninsula.
             </div>
           </div>
 
@@ -246,9 +250,8 @@ export default function InterestModule() {
                         </div>
                         <div className="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                           <div
-                            className={`h-full rounded-full transition-all duration-300 ${
-                              plant.moisture > 80 ? 'bg-blue-500' : plant.moisture < 25 ? 'bg-amber-500' : 'bg-emerald-500'
-                            }`}
+                            className={`h-full rounded-full transition-all duration-300 ${plant.moisture > 80 ? 'bg-blue-500' : plant.moisture < 25 ? 'bg-amber-500' : 'bg-emerald-500'
+                              }`}
                             style={{ width: `${plant.moisture}%` }}
                           ></div>
                         </div>

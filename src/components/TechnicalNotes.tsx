@@ -25,9 +25,9 @@ export default function TechnicalNotes() {
   };
 
   return (
-    <section id="tech-notes" className="py-20 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/20 transition-colors">
+    <section id="tech-notes" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
-        
+
         {/* Header */}
         <div className="mb-12 max-w-2xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-4">
@@ -51,11 +51,10 @@ export default function TechnicalNotes() {
                 key={cat.value}
                 id={`cat-btn-${cat.value}`}
                 onClick={() => setSelectedCategory(cat.value)}
-                className={`px-4 py-2 text-xs font-semibold rounded-xl border transition-all flex items-center gap-2 cursor-pointer ${
-                  selectedCategory === cat.value
+                className={`px-4 py-2 text-xs font-semibold rounded-xl border transition-all flex items-center gap-2 cursor-pointer ${selectedCategory === cat.value
                     ? 'bg-emerald-500 text-white border-emerald-400 shadow-sm'
                     : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-950/60'
-                }`}
+                  }`}
               >
                 <IconComponent className="w-3.5 h-3.5" />
                 {cat.label}

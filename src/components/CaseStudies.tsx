@@ -10,14 +10,14 @@ export default function CaseStudies() {
   return (
     <section id="case-studies" className="py-20 bg-neutral-50 dark:bg-[#0A0A0A] border-t border-neutral-200 dark:border-[#2A2A2A] transition-colors">
       <div className="max-w-6xl mx-auto px-6">
-        
+
         {/* Section Header */}
         <div className="mb-12 max-w-2xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest bg-[#4CAF50]/10 text-[#4CAF50] border border-[#4CAF50]/20 mb-4">
             <Target className="w-3 h-3" />
             Selected Work & Real-World Ownership
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif italic text-neutral-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold font-display tracking-tight text-slate-900 dark:text-slate-100">
             Ownership & Trade-offs
           </h2>
           <p className="text-neutral-500 dark:text-[#A0A0A0] mt-3 text-xs sm:text-sm leading-relaxed">
@@ -32,11 +32,10 @@ export default function CaseStudies() {
               key={study.id}
               id={`tab-cs-${study.id}`}
               onClick={() => setActiveCaseId(study.id)}
-              className={`pb-4 px-6 text-xs font-mono uppercase tracking-widest border-b-2 transition-all relative whitespace-nowrap cursor-pointer ${
-                activeCaseId === study.id
-                  ? 'border-[#4CAF50] text-[#4CAF50]'
-                  : 'border-transparent text-neutral-400 dark:text-[#707070] hover:text-neutral-900 dark:hover:text-white'
-              }`}
+              className={`pb-4 px-6 text-xs font-mono uppercase tracking-widest border-b-2 transition-all relative whitespace-nowrap cursor-pointer ${activeCaseId === study.id
+                ? 'border-[#4CAF50] text-[#4CAF50]'
+                : 'border-transparent text-neutral-400 dark:text-[#707070] hover:text-neutral-900 dark:hover:text-white'
+                }`}
             >
               {study.title}
               {activeCaseId === study.id && (
@@ -48,7 +47,7 @@ export default function CaseStudies() {
 
         {/* Active Case Study Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
+
           {/* Left Column - Main Details (Span 7) */}
           <div className="lg:col-span-7 space-y-8">
             {/* Title & Metadata */}
@@ -58,7 +57,7 @@ export default function CaseStudies() {
                 <span>•</span>
                 <span>{activeCase.period}</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-serif italic text-neutral-900 dark:text-white">
+              <h3 className="text-2xl sm:text-3xl font-display italic text-neutral-900 dark:text-white">
                 {activeCase.title}
               </h3>
               <p className="text-neutral-500 dark:text-[#A0A0A0] text-xs sm:text-sm leading-relaxed">
@@ -125,14 +124,14 @@ export default function CaseStudies() {
 
           {/* Right Column - Metrics & Quality Assurance (Span 5) */}
           <div className="lg:col-span-5 space-y-8">
-            
+
             {/* Real Impact Metrics Card */}
             <div className="bg-[#121212] text-[#E5E5E5] rounded-xl p-6 border border-neutral-200 dark:border-[#2A2A2A] space-y-4 shadow-xl">
               <div className="flex justify-between items-center border-b border-neutral-200 dark:border-[#2A2A2A] pb-3">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[#4CAF50] font-semibold">Performance Audits</span>
                 <Award className="w-4 h-4 text-[#4CAF50] animate-pulse" />
               </div>
-              
+
               <div className="space-y-4">
                 {activeCase.metrics.map((metric, idx) => (
                   <div key={idx} className="flex justify-between items-center gap-4">
@@ -161,7 +160,7 @@ export default function CaseStudies() {
               <h4 className="font-mono text-xs uppercase tracking-widest text-neutral-900 dark:text-white flex items-center gap-2">
                 <Code className="w-4 h-4 text-[#4CAF50]" /> How I Checked Quality:
               </h4>
-              
+
               <div className="space-y-4">
                 {activeCase.qualityChecks.map((check, idx) => (
                   <div
@@ -169,11 +168,11 @@ export default function CaseStudies() {
                     className="p-4 rounded-xl bg-[#121212] border border-neutral-200 dark:border-[#2A2A2A] space-y-2.5 text-[#E5E5E5]"
                   >
                     <div className="flex justify-between items-start">
-                      <div className="text-xs font-serif italic text-white">
+                      <div className="text-xs font-display italic text-white">
                         {check.method}
                       </div>
                     </div>
-                    
+
                     <div className="flex flex-wrap gap-1.5">
                       {check.tools.map((tool, tIdx) => (
                         <span key={tIdx} className="text-[9px] font-mono bg-[#1A1A1A] text-neutral-450 dark:text-[#A0A0A0] px-2 py-0.5 rounded border border-neutral-200 dark:border-[#2A2A2A]">

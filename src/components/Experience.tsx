@@ -3,9 +3,9 @@ import { experiences } from '../data/portfolioData';
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-slate-900 transition-colors">
+    <section id="experience" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
-        
+
         {/* Section Header */}
         <div className="mb-16 max-w-2xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-4">
@@ -16,7 +16,7 @@ export default function Experience() {
             Professional Experience
           </h2>
           <p className="text-slate-600 dark:text-slate-400 mt-3 text-sm sm:text-base leading-relaxed">
-            I believe junior status is defined by years of experience, not by depth of rigor. Here are the product teams where I have shipped responsive interfaces, owned compliance, and squashed runtime memory leaks.
+            Here are the product teams where I have shipped responsive interfaces, owned the user experience, and delivered high-quality software products.
           </p>
         </div>
 
@@ -26,10 +26,10 @@ export default function Experience() {
             <div key={exp.id} className="relative pl-8 md:pl-10 group">
               {/* Timeline dot */}
               <span className="absolute left-[-9px] top-1 w-4 h-4 rounded-full border-2 border-emerald-500 bg-white dark:bg-slate-900 transition-colors group-hover:scale-125 duration-300"></span>
-              
+
               {/* Card Container */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-50 dark:bg-slate-950/60 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
-                
+
                 {/* Left meta (4 columns) */}
                 <div className="lg:col-span-4 space-y-3">
                   <div>
@@ -49,7 +49,7 @@ export default function Experience() {
                     </span>
                     <span className="flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5" />
-                      San Francisco Bay Area (Hybrid)
+                      {exp.location}
                     </span>
                   </div>
 

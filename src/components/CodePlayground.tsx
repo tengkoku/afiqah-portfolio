@@ -21,7 +21,7 @@ export default function CodePlayground() {
     setRawCount(prev => prev + 1);
     const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     const lastChar = rawInput.slice(-1);
-    
+
     setDebounceLogs(prev => [
       { id: logIdRef.current++, type: 'raw', char: lastChar, time },
       ...prev.slice(0, 7)
@@ -86,7 +86,7 @@ export default function CodePlayground() {
   };
 
   return (
-    <section id="diagnostic-lab" className="py-20 border-t border-neutral-200 dark:border-[#2A2A2A] bg-neutral-50 dark:bg-[#0A0A0A] transition-colors">
+    <section id="diagnostic-lab" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* Module Header */}
         <div className="mb-12 max-w-2xl">
@@ -94,7 +94,7 @@ export default function CodePlayground() {
             <Sparkles className="w-3 h-3" />
             Interactive Diagnostics Sandbox
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif italic text-neutral-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold font-display tracking-tight text-slate-900 dark:text-slate-100">
             Frontend Diagnostic Lab
           </h2>
           <p className="text-neutral-500 dark:text-[#A0A0A0] mt-3 text-xs sm:text-sm leading-relaxed">
@@ -109,53 +109,49 @@ export default function CodePlayground() {
             <button
               id="tab-debounce"
               onClick={() => setActiveTab('debounce')}
-              className={`flex-shrink-0 text-left p-4 rounded-xl transition-all border ${
-                activeTab === 'debounce'
-                  ? 'bg-[#121212] border-neutral-200 dark:border-[#2A2A2A] shadow-md text-white scale-[1.02]'
-                  : 'border-transparent text-neutral-400 dark:text-[#707070] hover:text-[#A0A0A0] hover:bg-[#121212]/30'
-              } cursor-pointer`}
+              className={`flex-shrink-0 text-left p-4 rounded-xl transition-all border ${activeTab === 'debounce'
+                ? 'bg-[#121212] border-neutral-200 dark:border-[#2A2A2A] shadow-md text-white scale-[1.02]'
+                : 'border-transparent text-neutral-400 dark:text-[#707070] hover:text-[#A0A0A0] hover:bg-[#121212]/30'
+                } cursor-pointer`}
             >
               <div className={`font-mono text-[11px] uppercase tracking-widest ${activeTab === 'debounce' ? 'text-[#4CAF50] font-bold' : 'text-neutral-400 dark:text-[#A0A0A0]'}`}>1. High-Frequency Events</div>
-              <div className="text-xs text-neutral-450 dark:text-[#707070] mt-1 font-serif italic">Debounce input rendering loops</div>
+              <div className="text-xs text-neutral-450 dark:text-[#707070] mt-1 font-display italic">Debounce input rendering loops</div>
             </button>
 
             <button
               id="tab-renders"
               onClick={() => setActiveTab('renders')}
-              className={`flex-shrink-0 text-left p-4 rounded-xl transition-all border ${
-                activeTab === 'renders'
-                  ? 'bg-[#121212] border-neutral-200 dark:border-[#2A2A2A] shadow-md text-white scale-[1.02]'
-                  : 'border-transparent text-neutral-400 dark:text-[#707070] hover:text-[#A0A0A0] hover:bg-[#121212]/30'
-              } cursor-pointer`}
+              className={`flex-shrink-0 text-left p-4 rounded-xl transition-all border ${activeTab === 'renders'
+                ? 'bg-[#121212] border-neutral-200 dark:border-[#2A2A2A] shadow-md text-white scale-[1.02]'
+                : 'border-transparent text-neutral-400 dark:text-[#707070] hover:text-[#A0A0A0] hover:bg-[#121212]/30'
+                } cursor-pointer`}
             >
               <div className={`font-mono text-[11px] uppercase tracking-widest ${activeTab === 'renders' ? 'text-[#4CAF50] font-bold' : 'text-neutral-400 dark:text-[#A0A0A0]'}`}>2. Render Thrashing Lab</div>
-              <div className="text-xs text-neutral-450 dark:text-[#707070] mt-1 font-serif italic">Simulate UI render batching</div>
+              <div className="text-xs text-neutral-450 dark:text-[#707070] mt-1 font-display italic">Simulate UI render batching</div>
             </button>
 
             <button
               id="tab-accessibility"
               onClick={() => setActiveTab('accessibility')}
-              className={`flex-shrink-0 text-left p-4 rounded-xl transition-all border ${
-                activeTab === 'accessibility'
-                  ? 'bg-[#121212] border-neutral-200 dark:border-[#2A2A2A] shadow-md text-white scale-[1.02]'
-                  : 'border-transparent text-neutral-400 dark:text-[#707070] hover:text-[#A0A0A0] hover:bg-[#121212]/30'
-              } cursor-pointer`}
+              className={`flex-shrink-0 text-left p-4 rounded-xl transition-all border ${activeTab === 'accessibility'
+                ? 'bg-[#121212] border-neutral-200 dark:border-[#2A2A2A] shadow-md text-white scale-[1.02]'
+                : 'border-transparent text-neutral-400 dark:text-[#707070] hover:text-[#A0A0A0] hover:bg-[#121212]/30'
+                } cursor-pointer`}
             >
               <div className={`font-mono text-[11px] uppercase tracking-widest ${activeTab === 'accessibility' ? 'text-[#4CAF50] font-bold' : 'text-neutral-400 dark:text-[#A0A0A0]'}`}>3. Accessibility Auditor</div>
-              <div className="text-xs text-neutral-450 dark:text-[#707070] mt-1 font-serif italic">Real-time WCAG standard remediation</div>
+              <div className="text-xs text-neutral-450 dark:text-[#707070] mt-1 font-display italic">Real-time WCAG standard remediation</div>
             </button>
 
             <button
               id="tab-errors"
               onClick={() => setActiveTab('errors')}
-              className={`flex-shrink-0 text-left p-4 rounded-xl transition-all border ${
-                activeTab === 'errors'
-                  ? 'bg-[#121212] border-neutral-200 dark:border-[#2A2A2A] shadow-md text-white scale-[1.02]'
-                  : 'border-transparent text-neutral-400 dark:text-[#707070] hover:text-[#A0A0A0] hover:bg-[#121212]/30'
-              } cursor-pointer`}
+              className={`flex-shrink-0 text-left p-4 rounded-xl transition-all border ${activeTab === 'errors'
+                ? 'bg-[#121212] border-neutral-200 dark:border-[#2A2A2A] shadow-md text-white scale-[1.02]'
+                : 'border-transparent text-neutral-400 dark:text-[#707070] hover:text-[#A0A0A0] hover:bg-[#121212]/30'
+                } cursor-pointer`}
             >
               <div className={`font-mono text-[11px] uppercase tracking-widest ${activeTab === 'errors' ? 'text-[#4CAF50] font-bold' : 'text-neutral-400 dark:text-[#A0A0A0]'}`}>4. Isolated Error Boundaries</div>
-              <div className="text-xs text-neutral-450 dark:text-[#707070] mt-1 font-serif italic">Graceful crash mitigation logic</div>
+              <div className="text-xs text-neutral-450 dark:text-[#707070] mt-1 font-display italic">Graceful crash mitigation logic</div>
             </button>
           </div>
 
@@ -165,7 +161,7 @@ export default function CodePlayground() {
             {activeTab === 'debounce' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-serif italic text-white">
+                  <h3 className="text-lg font-display italic text-white">
                     High-Frequency Input Optimization
                   </h3>
                   <p className="text-xs sm:text-sm text-neutral-450 dark:text-[#A0A0A0] mt-1">
@@ -234,8 +230,8 @@ export default function CodePlayground() {
                           debounceLogs.map((log) => (
                             <div key={log.id} className="flex justify-between">
                               <span className={log.type === 'raw' ? 'text-rose-400' : 'text-[#4CAF50] font-semibold'}>
-                                {log.type === 'raw' 
-                                  ? `⚡ Keyboard Keystroke [char: "${log.char}"]` 
+                                {log.type === 'raw'
+                                  ? `⚡ Keyboard Keystroke [char: "${log.char}"]`
                                   : `✓ API Query Fired [query: "${log.char}"]`}
                               </span>
                               <span className="text-neutral-500 dark:text-[#707070] text-[9px]">{log.time}</span>
@@ -244,9 +240,10 @@ export default function CodePlayground() {
                         )}
                       </div>
                     </div>
-                    <div className="text-[9px] text-neutral-500 border-t border-neutral-200 dark:border-[#2A2A2A] pt-1.5 mt-2 font-mono">
-                      Efficiency Factor: <span className="text-[#4CAF50] font-semibold font-mono">{rawCount > 0 ? `${Math.round(((rawCount - debouncedCount) / rawCount) * 100)}%` : '0%'}</span> payload reduction.
-                    </div>
+                  </div>
+
+                  <div className="text-[9px] text-neutral-500 border-t border-neutral-200 dark:border-[#2A2A2A] pt-1.5 mt-2 font-mono">
+                    Efficiency Factor: <span className="text-[#4CAF50] font-semibold font-mono">{rawCount > 0 ? `${Math.round(((rawCount - debouncedCount) / rawCount) * 100)}%` : '0%'}</span> payload reduction.
                   </div>
                 </div>
               </div>
@@ -256,7 +253,7 @@ export default function CodePlayground() {
             {activeTab === 'renders' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-serif italic text-white">
+                  <h3 className="text-lg font-display italic text-white">
                     React Render Thrashing & Automatic Batching
                   </h3>
                   <p className="text-xs sm:text-sm text-neutral-450 dark:text-[#A0A0A0] mt-1">
@@ -335,7 +332,7 @@ export default function CodePlayground() {
               <div className="space-y-6">
                 <div className="flex justify-between items-start gap-4">
                   <div>
-                    <h3 className="text-lg font-serif italic text-white">
+                    <h3 className="text-lg font-display italic text-white">
                       WCAG 2.1 AA Accessibility Remediator
                     </h3>
                     <p className="text-xs sm:text-sm text-neutral-450 dark:text-[#A0A0A0] mt-1">
@@ -345,11 +342,10 @@ export default function CodePlayground() {
                   <button
                     id="a11y-toggle"
                     onClick={() => setA11yRemediated(!a11yRemediated)}
-                    className={`px-3 py-1.5 rounded-full text-[9px] font-mono uppercase tracking-widest flex items-center gap-1.5 transition-colors cursor-pointer ${
-                      a11yRemediated
-                        ? 'bg-[#4CAF50]/10 text-[#4CAF50] border border-[#4CAF50]/30'
-                        : 'bg-rose-950/40 text-rose-400 border border-rose-500/30'
-                    }`}
+                    className={`px-3 py-1.5 rounded-full text-[9px] font-mono uppercase tracking-widest flex items-center gap-1.5 transition-colors cursor-pointer ${a11yRemediated
+                      ? 'bg-[#4CAF50]/10 text-[#4CAF50] border border-[#4CAF50]/30'
+                      : 'bg-rose-950/40 text-rose-400 border border-rose-500/30'
+                      }`}
                   >
                     {a11yRemediated ? <CheckCircle2 className="w-3 h-3" /> : <AlertTriangle className="w-3 h-3" />}
                     {a11yRemediated ? 'Remediation Active' : 'Legacy Defective'}
@@ -363,7 +359,7 @@ export default function CodePlayground() {
                       <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 mb-3 font-semibold">
                         {a11yRemediated ? 'Accessible Tablist Layout' : 'Div-Based Un-focusable Buttons'}
                       </div>
-                      
+
                       {/* Interactive Buttons */}
                       <div className={a11yRemediated ? "flex gap-2" : "flex gap-2"}>
                         {[1, 2, 3].map((val, idx) => {
@@ -375,11 +371,10 @@ export default function CodePlayground() {
                                 id={`tab-opt-${val}`}
                                 onFocus={() => setFocusedIndex(idx)}
                                 onBlur={() => setFocusedIndex(null)}
-                                className={`px-4 py-2 text-xs font-mono uppercase tracking-widest rounded-lg border transition-all cursor-pointer ${
-                                  isFocused 
-                                    ? 'ring-2 ring-[#4CAF50] outline-none scale-105 border-[#4CAF50]' 
-                                    : 'border-neutral-200 dark:border-[#2A2A2A]'
-                                } bg-[#121212] text-white`}
+                                className={`px-4 py-2 text-xs font-mono uppercase tracking-widest rounded-lg border transition-all cursor-pointer ${isFocused
+                                  ? 'ring-2 ring-[#4CAF50] outline-none scale-105 border-[#4CAF50]'
+                                  : 'border-neutral-200 dark:border-[#2A2A2A]'
+                                  } bg-[#121212] text-white`}
                                 aria-label={`Operational Option number ${val}`}
                               >
                                 Option {val}
@@ -402,14 +397,13 @@ export default function CodePlayground() {
 
                       {/* Descriptive contrast box */}
                       <div className="mt-4">
-                        <span className={`text-xs font-semibold ${
-                          a11yRemediated ? 'text-white' : 'text-neutral-700 dark:text-[#404040]'
-                        }`}>
+                        <span className={`text-xs font-semibold ${a11yRemediated ? 'text-white' : 'text-neutral-700 dark:text-[#404040]'
+                          }`}>
                           This text has {a11yRemediated ? '4.5:1 High Contrast Ratio' : '1.8:1 Invisible Low Contrast'}
                         </span>
                         <p className="text-[11px] text-neutral-450 dark:text-[#A0A0A0] mt-1 leading-normal">
-                          {a11yRemediated 
-                            ? '✓ Standard screen reader VoiceOver picks this component up instantly and supports full Tab index keyboard focus overlays.' 
+                          {a11yRemediated
+                            ? '✓ Standard screen reader VoiceOver picks this component up instantly and supports full Tab index keyboard focus overlays.'
                             : '❌ Completely skipped by tab buttons. Visual contrast fails the European Accessibility Act pre-requisite compliance.'}
                         </p>
                       </div>
@@ -428,7 +422,7 @@ export default function CodePlayground() {
                     <div className="p-4 rounded-xl border border-neutral-250 dark:border-[#2A2A2A] flex items-center justify-between bg-black">
                       <div>
                         <div className="text-xs text-neutral-450 dark:text-[#A0A0A0] font-sans">Lighthouse Accessibility Audit</div>
-                        <div className="text-3xl font-extrabold font-serif italic mt-1 flex items-baseline gap-1">
+                        <div className="text-3xl font-extrabold font-display italic mt-1 flex items-baseline gap-1">
                           <span className={a11yRemediated ? "text-[#4CAF50]" : "text-rose-450 dark:text-rose-400"}>
                             {a11yRemediated ? '100' : '42'}
                           </span>
@@ -444,18 +438,18 @@ export default function CodePlayground() {
                       <div className="font-mono text-[10px] uppercase tracking-widest text-[#4CAF50] font-bold">Technical Remediation Specs:</div>
                       <ul className="space-y-1.5 text-[11px] text-neutral-450 dark:text-[#A0A0A0] list-disc list-inside">
                         <li>
-                          {a11yRemediated 
-                            ? 'Replaced un-focusable <div> with semantic html <button> elements.' 
+                          {a11yRemediated
+                            ? 'Replaced un-focusable <div> with semantic html <button> elements.'
                             : 'Standard tags are plain <div> wrapper elements with no button triggers.'}
                         </li>
                         <li>
-                          {a11yRemediated 
-                            ? 'Supplied full focus-outline ring boundaries for visible keyboard cues.' 
+                          {a11yRemediated
+                            ? 'Supplied full focus-outline ring boundaries for visible keyboard cues.'
                             : 'Disabled default user-agent focus outline lines completely.'}
                         </li>
                         <li>
-                          {a11yRemediated 
-                            ? 'Elevated font colors from soft white-on-gray to deep, compliant high contrast (4.5:1).' 
+                          {a11yRemediated
+                            ? 'Elevated font colors from soft white-on-gray to deep, compliant high contrast (4.5:1).'
                             : 'Kept tiny slate gray contrast headers which blend into the card backing.'}
                         </li>
                       </ul>
@@ -469,7 +463,7 @@ export default function CodePlayground() {
             {activeTab === 'errors' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-serif italic text-white">
+                  <h3 className="text-lg font-display italic text-white">
                     Granular Component Error Mitigation
                   </h3>
                   <p className="text-xs sm:text-sm text-neutral-450 dark:text-[#A0A0A0] mt-1">
@@ -518,11 +512,11 @@ export default function CodePlayground() {
                       <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 font-bold">
                         Telemetry Display Widget
                       </div>
-                      
+
                       {widgetCorrupted ? (
                         /* The simulated local Error Boundary UI */
                         <div className="p-4 bg-rose-950/20 border border-rose-500/30 rounded-lg space-y-2 animate-in fade-in zoom-in-95 duration-200 text-[#E5E5E5]">
-                          <div className="flex items-center gap-1.5 text-rose-400 font-bold text-xs font-serif italic">
+                          <div className="flex items-center gap-1.5 text-rose-400 font-bold text-xs font-display italic">
                             <AlertCircle className="w-4 h-4" /> Widget Connection Failed
                           </div>
                           <p className="text-[9px] text-rose-400 font-mono leading-relaxed bg-black/40 p-2 rounded border border-rose-900/40">

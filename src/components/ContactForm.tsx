@@ -17,7 +17,7 @@ export default function ContactForm() {
   const [email, setEmail] = useState('');
   const [topic, setTopic] = useState('collaboration');
   const [message, setMessage] = useState('');
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [validationError, setValidationError] = useState('');
@@ -97,9 +97,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/20 transition-colors">
+    <section id="contact" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
-        
+
         {/* Header */}
         <div className="mb-12 max-w-2xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-4">
@@ -116,10 +116,10 @@ export default function ContactForm() {
 
         {/* Form and Contact info grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
+
           {/* Left: Contact Info & Connections (Span 5) */}
           <div className="lg:col-span-5 space-y-6">
-            
+
             {/* Direct Card links */}
             <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm">
               <h3 className="font-bold font-display text-sm text-slate-900 dark:text-slate-100 uppercase tracking-wider">
@@ -220,7 +220,7 @@ export default function ContactForm() {
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
-                      
+
                       <div className="text-[10px] text-slate-400 leading-normal bg-black/40 p-2 rounded border border-slate-850">
                         Topic: <span className="text-slate-200 font-bold">{msg.topic}</span>
                         <p className="mt-1 font-mono italic text-[9px]">"{msg.message}"</p>
@@ -239,7 +239,7 @@ export default function ContactForm() {
                           </span>
                         )}
                       </div>
-                      
+
                       {msg.replied && (
                         <div className="text-[10px] bg-emerald-950/20 text-emerald-400/90 p-2 rounded-lg border border-emerald-900/30 font-sans leading-normal animate-in slide-in-from-top-1 duration-250">
                           <strong>Afiqah AutoBot:</strong> "Transmissions cached successfully! Handshake verified. Standby for standard manual reply soon."
@@ -299,7 +299,7 @@ export default function ContactForm() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Jane Doe"
-                    className="p-3 border rounded-xl bg-slate-50 focus:bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm font-sans dark:text-slate-100"
+                    className="p-3 border rounded-xl bg-slate-50 focus:bg-gray dark:bg-slate-950 border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm font-sans dark:text-slate-100"
                   />
                 </div>
 
@@ -314,7 +314,7 @@ export default function ContactForm() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="jane@company.com"
-                    className="p-3 border rounded-xl bg-slate-50 focus:bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm font-sans dark:text-slate-100"
+                    className="p-3 border rounded-xl bg-slate-50 focus:bg-gray dark:bg-slate-950 border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm font-sans dark:text-slate-100"
                   />
                 </div>
               </div>
@@ -327,7 +327,7 @@ export default function ContactForm() {
                   id="contact-topic"
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
-                  className="p-3 border rounded-xl bg-slate-50 focus:bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm font-sans dark:text-slate-100"
+                  className="p-3 border rounded-xl bg-slate-50 focus:bg-gray dark:bg-slate-950 border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm font-sans dark:text-slate-100"
                 >
                   <option value="collaboration">General React/Frontend Collaboration</option>
                   <option value="contracting">Contract / Part-time Front-end Project</option>
@@ -347,7 +347,7 @@ export default function ContactForm() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Describe your project, timeline, or botany advice..."
-                  className="p-3 border rounded-xl bg-slate-50 focus:bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm font-sans dark:text-slate-100"
+                  className="p-3 border rounded-xl bg-slate-50 focus:bg-gray dark:bg-slate-950 border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-sm font-sans dark:text-slate-100"
                 ></textarea>
               </div>
 

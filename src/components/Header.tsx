@@ -9,7 +9,7 @@ export default function Header() {
     { label: 'Case Studies', href: '#case-studies', icon: Target },
     { label: 'Diagnostic Lab', href: '#diagnostic-lab', icon: Terminal },
     { label: 'Technical Notes', href: '#tech-notes', icon: BookOpen },
-    { label: 'Hikes & Botany', href: '#hobbies', icon: Compass },
+    { label: 'Interest & Hobby', href: '#hobbies', icon: Compass },
     { label: 'Experience', href: '#experience', icon: Briefcase },
     { label: 'Contact', href: '#contact', icon: Mail }
   ];
@@ -26,13 +26,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full glass border-b border-neutral-200 dark:border-[#2A2A2A] transition-colors">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        
+
         {/* Logo / Console Prompt */}
-        <a 
-          href="#" 
+        <a
+          href="#"
           className="flex flex-col group py-1"
         >
-          <span className="text-lg font-serif italic text-neutral-900 dark:text-white tracking-tight transition-colors group-hover:text-emerald-500 dark:group-hover:text-[#4CAF50]">Afiqah</span>
+          <span className="text-lg font-display italic text-neutral-900 dark:text-white tracking-tight transition-colors group-hover:text-emerald-500 dark:group-hover:text-[#4CAF50]">Afiqah</span>
           <span className="text-[8px] font-mono uppercase tracking-widest text-neutral-400 dark:text-[#A0A0A0] font-semibold">// Systems Thinker</span>
         </a>
 

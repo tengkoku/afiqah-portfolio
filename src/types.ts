@@ -48,6 +48,7 @@ export interface Experience {
   role: string;
   company: string;
   period: string;
+  location: string;
   productArea: string;
   scope: string;
   stack: string[];
@@ -60,6 +61,7 @@ export interface TrailPoint {
   elevation: number; // in feet
   distance: number; // in miles from start
   landmark: string;
+  majorFlora: string;
   lesson: string;
   techAnalogy: string;
 }

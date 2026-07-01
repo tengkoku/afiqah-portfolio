@@ -272,64 +272,70 @@ export class ResilientWidget extends Component<Props, State> {
 
 export const experiences: Experience[] = [
   {
-    id: "veloce-logistics",
+    id: "marine-saas",
     role: "Junior Frontend Developer",
-    company: "Veloce Logistics",
-    period: "Feb 2025 - Present",
-    productArea: "Live Fleet Dispatch Routing Dashboard & Operational Portals.",
+    company: "Marine Saas",
+    period: "Mar 2025 - Present",
+    location: "Selangor, Malaysia (Hybrid)",
+    productArea: "Real-time & Historical Vessels Routing Dashboard, Management & Operational Portals.",
     scope: "Own development of modular React maps widgets, interactive routing sidebars, and real-time state synchronizations.",
-    stack: ["React", "TypeScript", "Tailwind CSS", "Mapbox GL", "Vitest", "Docker"],
+    stack: ["HTML", "JavaScript", "React", "Next.js", "Laravel", "PHP Frameworks", "MySQL", "PostgreSQL", "TypeScript", "Tailwind CSS", "Leaflet", "Vite", "Git", "shadcn/ui", "REST APIs", "Postman", "Model-View-Controller (MVC)", "Component-Based Architecture", "MCP"],
     bulletPoints: [
-      "Optimized real-time dispatch updates by batching websocket ticks, bringing main-thread CPU idle time from 18% to 88% under heavy loads.",
-      "Redesigned dispatcher claim forms to use rigid local schema validation via React-Hook-Form and Zod, decreasing invalid driver submissions by 24%.",
-      "Constructed a high-density bento grid view that lets dispatchers manage, sort, and search 400+ driver records without UI latency.",
-      "Introduced end-to-end user regression workflows via Cypress, catching 14 critical booking flow errors prior to production releases."
+      "Analytical Problem-Solving: Diagnose and resolve intricate rendering and logic defects through targeted commits, showing meticulous attention to detail across chart rendering, complex query optimizations, and robust form validation.",
+      "User Experience & Design: Collaborate across the stack to bridge the gap between complex geospatial data pipelines and intuitive, high-fidelity, and responsive user experiences.",
+      "Dashboard Engineering: Build data-heavy dashboards featuring real-time widgets, interactive charts with advanced filtering/download support, and clean tabular data exports for environmental reporting.",
+      "System Monitoring: Improve platform monitoring capabilities by implementing WebSockets and interval-based polling mechanisms for live system and vessel tracking.",
+      "Architecture & Mapping: Architect sophisticated map-based geospatial interfaces using TypeScript and Next.js (App Router), integrating Leaflet to manage precise DMS coordinate systems.",
+      "Data Integration & Caching: Display strong technical judgment in fetching data from external endpoints, designing sophisticated caching strategies for live data streams, and ensuring graceful API error fallbacks.",
+      "Codebase Stability: Maintain high product quality and ecosystem stability through precise dependency management, such as version pinning and critical framework upgrades."
     ]
   },
   {
-    id: "sylvan-saas",
-    role: "Frontend Engineering Intern",
-    company: "Sylvan SaaS",
-    period: "May 2024 - Dec 2024",
-    productArea: "User Invitation Flow, Billing Portals, and Core UI Component Library.",
+    id: "titan-mnc",
+    role: "IT Support Intern",
+    company: "Titan MNC",
+    period: "Sep 2023 - Feb 2024",
+    location: "Johor, Malaysia",
+    productArea: "Enterprise Solutions, IT and Automation Systems.",
     scope: "Identified usability roadblocks, optimized bundle sizes, and audited legacy interfaces for web accessibility standard compliance.",
-    stack: ["Next.js", "React", "Jest", "Axe Accessibility Core", "CSS Modules", "Git"],
+    stack: ["C#", "ASP.NET", "SQL Server", "SAP", "Automation Anywhere"],
     bulletPoints: [
-      "Audited 40+ modular components for WCAG 2.1 AA accessibility compliance; restored screen-reader focus traps and added proper semantic landmarks.",
-      "Re-engineered next/image implementations and dynamically imported heavy billing libraries, improving cumulative layout shift scores across marketing lines by 40%.",
-      "Created a unified multi-step client invitation drawer with graceful error state handling, which reduced form abandonment by 18% during onboarding.",
-      "Refactored legacy utility components, trimming cumulative application vendor JS bundle sizing by 45 KB."
+      "Technical Troubleshooting: Applied analytical thinking to diagnose software abnormalities, resolve technical issues, and provide system support to maintain business continuity.",
+      "Cross-Functional Collaboration: Partnered with internal teams to evaluate IT workflows, support enterprise platforms, and align software setups with user experience requirements."
     ]
   }
 ];
 
 export const hikingTrailData: TrailPoint[] = [
   {
-    id: "trail-cathedral",
-    name: "Redwood Creek Descent",
-    elevation: 450, // drop
+    id: "trail-carnivorous",
+    name: "Carnivorous Pitcher Plant Trail",
+    elevation: 450,
     distance: 3.2,
-    landmark: "The Cathedral Grove Redwoods",
-    lesson: "Root Connectivity. Redwood trees don't have deep taproots. Instead, their roots spread horizontally and lock onto adjacent trees, creating a unified network that can withstand major winter storms.",
-    techAnalogy: "Shared Context & Composition. In frontend, instead of building giant, heavy monolithic components that try to carry everything alone (and fall when single API keys break), we write small, inter-locking components that compose together. Roots interlock via React Context/props, distributing state weight evenly."
+    landmark: "Banjaran Titiwangsa",
+    majorFlora: "Nepenthes malayensis",
+    lesson: "The rim of the pitcher (peristome) produces sweet, intoxicating nectar. Insects get so consumed by immediate gratification that they do not notice the slippery slope until they fall in. The takeaway: Be wary of shortcuts or habits that offer instant comfort but gradually erode your long-term freedom.",
+    techAnalogy: "The mechanism of the Nepenthes pitcher plant provides a perfect, cautionary analogy for Attractive UI/UX with High Friction or Hidden Traps. In product design, this is known as a 'Dark Pattern' or a 'Roach Motel' where the onboarding is beautifully frictionless, but the offboarding is a trap."
   },
   {
-    id: "trail-pine",
-    name: "Sentinel Dome Ridge Trail",
+    id: "trail-berembun",
+    name: "Dipterocarps",
+    elevation: 180, // drop
+    distance: 1.6,
+    landmark: "Mount Berembun Loop Trail",
+    majorFlora: "Shorea",
+    lesson: "The trees save their energy through years of quiet growth, waiting for the perfect environmental trigger (like a minor drought). When they strike, they overwhelm the market. The takeaway: Do not burn your resources on continuous, half-hearted attempts. Consolidate your energy, build your assets in silence, and launch with massive, undeniable force when conditions align.",
+    techAnalogy: "In software engineering, when a highly anticipated product launches (like a ticket flash sale), millions of users hit the servers simultaneously. This is called the Thundering Herd Problem. Systems must be architected to handle this exact Dipterocarp behavior. Engineers use Load Balancers and Auto-scaling Groups to dynamically spin up thousands of server instances at the exact same second to absorb the massive traffic spike without crashing."
+  },
+  {
+    id: "trail-mossy",
+    name: "Palms & Ferns",
     elevation: 1200, // gain
-    distance: 5.6,
-    landmark: "Windswept Jeffery Pine",
-    lesson: "Adaptive Growth. This tree grows on a solid granite dome. Swept by continuous high-speed winds, it grows short, thick, and crooked, hugging the stone rather than trying to stand perfectly straight.",
-    techAnalogy: "Graceful Degradation. A robust UI is like the windswept pine: it adapts to hostile environments. Instead of assuming high-speed Wi-Fi or fully hydrated payloads, we build layouts that adapt when data is missing or network speeds drop, adjusting density to guarantee usability."
-  },
-  {
-    id: "trail-canyon",
-    name: "Fern Canyon Trail Loop",
-    elevation: 180,
-    distance: 2.1,
-    landmark: "Dripping Canyon Fern Walls",
-    lesson: "Microclimate Shield. High, moist walls lock in humidity, allowing prehistoric ferns to thrive in a cold environment that would normally freeze or dry them out.",
-    techAnalogy: "Encapsulation & Scope Isolation. Just as the high canyon walls shield the delicate ferns from harsh winds, we encapsulate visual components within rigid scope boundaries (e.g., scoped Tailwind blocks, separate files, pure render functions). This protects elements from global side-effects, keeping them safe."
+    distance: 3.1,
+    landmark: "Cameron Highlands Mossy Forest",
+    majorFlora: "Staghorn Fern",
+    lesson: "This iconic Malaysian fern grows high up on tree branches rather than in the soil. It arranges its fronds into a tight, bowl-shaped rosette to catch falling leaves, rain, and organic debris, creating its own self-contained soil ecosystem right in the canopy.",
+    techAnalogy: "Traditional systems rely on a central cloud server (the ground soil) for data and processing. Edge Computing (like AWS Greengrass or Cloudflare Workers) acts like the Bird's Nest Fern. It processes data right where it lives—on local devices, routers, or IoT sensors—capturing, filtering, and utilizing inputs locally without needing a constant, heavy pipeline down to the central database."
   }
 ];
 
