@@ -29,15 +29,15 @@ export default function Hero() {
 
         {/* Center pill — desktop */}
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-2 py-2 items-center gap-1">
-          <button className="px-4 py-1.5 rounded-full text-sm font-medium text-white bg-white/20 transition-colors">
+          {/* <button className="px-4 py-1.5 rounded-full text-sm font-medium text-white bg-white/20 transition-colors">
             {developerProfile.name}
-          </button>
+          </button> */}
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={(e) => handleScroll(e, item.href)}
-              className="px-4 py-1.5 rounded-full text-sm font-medium text-white/70 hover:bg-white/20 hover:text-white transition-colors"
+              className={`px-4 py-1.5 rounded-full text-sm font-medium text-white/70 hover:bg-white/20 hover:text-white'}`}
             >
               {item.label}
             </a>

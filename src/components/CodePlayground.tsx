@@ -571,12 +571,12 @@ export default function CodePlayground() {
                   <span><strong>Trade-off:</strong> Writing class boundaries isolates failures to individual cards, keeping the broader page usable for checkout.</span>
                 )}
               </div>
-              <a
+              {/* <a
                 href="#case-studies"
                 className="text-[10px] font-mono uppercase tracking-widest font-bold text-[#4CAF50] hover:text-[#4CAF50]/80 flex-shrink-0 flex items-center gap-1 group"
               >
                 See Case Studies <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

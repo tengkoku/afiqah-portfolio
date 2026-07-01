@@ -6,7 +6,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'Case Studies', href: '#case-studies', icon: Target },
+    // { label: 'Case Studies', href: '#case-studies', icon: Target },
     { label: 'Diagnostic Lab', href: '#diagnostic-lab', icon: Terminal },
     { label: 'Technical Notes', href: '#tech-notes', icon: BookOpen },
     { label: 'Interest & Hobby', href: '#hobbies', icon: Compass },
