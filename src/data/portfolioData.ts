@@ -278,7 +278,7 @@ export const experiences: Experience[] = [
     period: "Mar 2025 - Present",
     location: "Selangor, Malaysia (Hybrid)",
     productArea: "Real-time & Historical Vessels Routing Dashboard, Management & Operational Portals.",
-    scope: "Own development of modular React maps widgets, interactive routing sidebars, and real-time state synchronizations.",
+    scope: "Own development of modular React components, heavy-data charts, real-time state synchronizations, and more.",
     stack: ["HTML", "JavaScript", "React", "Next.js", "Laravel", "PHP Frameworks", "MySQL", "PostgreSQL", "TypeScript", "Tailwind CSS", "Leaflet", "Vite", "Git", "shadcn/ui", "REST APIs", "Postman", "Model-View-Controller (MVC)", "Component-Based Architecture", "MCP"],
     bulletPoints: [
       "Analytical Problem-Solving: Diagnose and resolve intricate rendering and logic defects through targeted commits, showing meticulous attention to detail across chart rendering, complex query optimizations, and robust form validation.",
@@ -303,6 +303,78 @@ export const experiences: Experience[] = [
       "Technical Troubleshooting: Applied analytical thinking to diagnose software abnormalities, resolve technical issues, and provide system support to maintain business continuity.",
       "Cross-Functional Collaboration: Partnered with internal teams to evaluate IT workflows, support enterprise platforms, and align software setups with user experience requirements."
     ]
+  }
+];
+
+// ── Redesigned site content (Hero → Tech Stack → Experience → Education) ──
+
+export interface TechGroup {
+  label: string;
+  items: string[];
+}
+
+export const techStack: TechGroup[] = [
+  { label: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "shadcn/ui", "Leaflet", "Vite"] },
+  { label: "Languages", items: ["TypeScript", "JavaScript", "PHP", "HTML", "SQL", "C#"] },
+  { label: "Backend & Data", items: ["Laravel", "MySQL", "PostgreSQL", "REST APIs", "ASP.NET", "SQL Server"] },
+  { label: "Tooling", items: ["Git", "Postman", "MCP", "SAP", "Automation Anywhere"] },
+  { label: "Architecture", items: ["Model-View-Controller", "Component-Based Architecture"] }
+];
+
+export interface ExperienceHighlights {
+  summary: string;
+  highlights: { title: string; description: string }[];
+  featuredStack: string[];
+}
+
+// Keyed by `experiences[].id`
+export const experienceHighlights: Record<string, ExperienceHighlights> = {
+  "marine-saas": {
+    summary: "Real-time and historical vessel routing dashboards, management and operational portals. I own modular React components, heavy-data charts and real-time state synchronisation.",
+    highlights: [
+      { title: "Dashboard engineering", description: "Data-heavy dashboards with real-time widgets, interactive charts with filtering and downloads, and clean tabular exports for environmental reporting." },
+      { title: "Geospatial interfaces", description: "Map-based interfaces in TypeScript and the Next.js App Router, integrating Leaflet to handle precise DMS coordinate systems." },
+      { title: "Live monitoring", description: "WebSockets and interval-based polling for live system and vessel tracking." },
+      { title: "Data & caching", description: "Caching strategies for live data streams from external endpoints, with graceful API error fallbacks." }
+    ],
+    featuredStack: ["Next.js", "TypeScript", "Laravel", "PostgreSQL", "Leaflet", "shadcn/ui"]
+  },
+  "titan-mnc": {
+    summary: "Enterprise solutions, IT and automation systems. Identified usability roadblocks and audited legacy interfaces for accessibility compliance.",
+    highlights: [
+      { title: "Technical troubleshooting", description: "Diagnosed software abnormalities, resolved technical issues and provided system support to maintain business continuity." },
+      { title: "Cross-functional collaboration", description: "Evaluated IT workflows with internal teams, supported enterprise platforms and aligned software setups with user needs." }
+    ],
+    featuredStack: ["C#", "ASP.NET", "SQL Server", "SAP", "Automation Anywhere"]
+  }
+};
+
+export interface EducationEntry {
+  id: string;
+  institution: string;
+  qualification: string;
+  period: string;
+  location: string;
+  notes?: string;
+}
+
+// TODO: replace the placeholders with real education details
+export const education: EducationEntry[] = [
+  {
+    id: "edu-1",
+    institution: "Universiti Malaya (UM)",
+    qualification: "Foundation in Science",
+    period: "2019-2020",
+    location: "Kuala Lumpur, MY",
+    notes: "3.83 CGPA"
+  },
+  {
+    id: "edu-2",
+    institution: "Universiti Teknologi Malaysia (UTM)",
+    qualification: "Bachelor of Computer Science",
+    period: "2020-2024",
+    location: "Skudai, MY",
+    notes: "First Class Honours"
   }
 ];
 

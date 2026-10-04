@@ -4,7 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Afiqah's Portfolio</title>
+  <title>Afiqah — Frontend Developer</title>
+  <script>
+    // Apply the saved theme before first paint (dark by default)
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') document.documentElement.classList.remove('dark');
+    } catch (e) {}
+  </script>
 </head>
 
 <body>
