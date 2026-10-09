@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { developerProfile } from '../../data/portfolioData';
 import { Fur } from 'feral-fur';
+import { Mascot } from 'page-mascot';
 import { useIsDark } from '../../hooks/useTheme';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
@@ -36,7 +37,15 @@ export default function Hero() {
       </div>
 
       <div className="flex flex-1 flex-col justify-center gap-7 pb-12 pt-[72px]">
-        <p className="label reveal text-muted">(01) — Portfolio</p>
+        <div className="reveal flex items-center gap-4">
+          <Mascot
+            directions="/mascots/amok-directions.webp"
+            reactions="/mascots/amok-reactions.webp"
+            size={isPhone ? 80 : 104}
+            label="Amok the cat, watching your cursor"
+          />
+          <p className="label text-muted">(01) — Portfolio</p>
+        </div>
 
         <h1 className="sr-only">{name}</h1>
         <div className="reveal" style={{ '--d': '120ms' } as CSSProperties}>
